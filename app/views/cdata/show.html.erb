@@ -1,0 +1,12 @@
+<div id='cdata'> 
+	<table>
+		<h2> <%= @cdatum.id %> </h2>
+
+		<tr><td> Value1</td> <td> Value2</td></tr>
+		<tr><td> <%= @cdatum.value1 %></td> <td> <%= @cdatum.value2 %></td> </tr>
+	</table>
+
+</div>
+<%= link_to "Edit Data", [:edit, @survey, @cdatum] %>
+<%= link_to "Delete Data", [@survey, @cdatum], :method => :delete,
+	:confirm => "Sure?" %>

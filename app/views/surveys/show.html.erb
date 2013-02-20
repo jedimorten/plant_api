@@ -1,0 +1,15 @@
+<% title(@survey.title, "Surveys") %>
+<h2><%= @survey.title %></h2>
+
+<ul id="cdata">
+	<% @survey.cdata.each do |cdatum| %>
+	  <li>
+	     #<%= cdatum.id %> - <%= link_to cdatum.id, [@survey, cdatum] %>
+	  </li>
+	<% end %>
+</ul>
+<p><small> Owned by <%= @survey.user_id %> </small> </p>
+
+<%= link_to "Edit survey", edit_survey_path(@survey) %>
+<%= link_to "Delete Survey", @survey, :method => :delete, :confirm => "Sure?" %>
+<%= link_to "New Data", new_survey_cdatum_path(@survey) %>
